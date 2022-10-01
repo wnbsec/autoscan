@@ -9,8 +9,8 @@ if [ "$1" == "" ]; then
 	echo "Syntax: $0 <IP>"
 	exit 1
 fi
-
-masscan -oL $file -p1-65535,U:1-65535 $host --rate=1000
+							# add switches
+masscan -oL $file -p1-65535,U:1-65535 $host --rate=1000 -e eth0
 
 while IFS= read -r line
 do
